@@ -6,7 +6,7 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-### Compatibility Note
+### Uwaga dotycząca zgodności
 
 Vue does **not** support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all [ECMAScript 5 compliant browsers](http://caniuse.com/#feat=es5).
 
