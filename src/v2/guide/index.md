@@ -14,17 +14,17 @@ Jeżeli jesteś doświadczonym fornt-end developerem i chcesz zobaczyć jak Vue 
 
 <p class="tip">Oficjalny przewodnik wymaga znajmości HTML, CSS i JavaScript. Rozpoczynanie nauki od Vue nie jest najlepszym rozwiązaniem, lepiej najpierw poznać podstawy i wrócić! Doświadczenie z innymi frameworkami jest pomocne, ale nie wymagane.</p>
 
-The easiest way to try out Vue.js is using the [JSFiddle Hello World example](https://jsfiddle.net/chrisvfritz/50wL7mdz/). Feel free to open it in another tab and follow along as we go through some basic examples. Or, you can <a href="https://gist.githubusercontent.com/chrisvfritz/7f8d7d63000b48493c336e48b3db3e52/raw/ed60c4e5d5c6fec48b0921edaed0cb60be30e87c/index.html" target="_blank" download="index.html">create an <code>index.html</code> file</a> and include Vue with:
+Najłatwiejszym sposobem wypróbowania Vue.js jest skorzystanie z [JSFiddle Hello World example](https://jsfiddle.net/chrisvfritz/50wL7mdz/). Otwórz link w nowej karcie i pracuj z przykładami z tego przewodnika. Możesz również pobrać <a href="https://gist.githubusercontent.com/chrisvfritz/7f8d7d63000b48493c336e48b3db3e52/raw/ed60c4e5d5c6fec48b0921edaed0cb60be30e87c/index.html" target="_blank" download="index.html">, następnie utworzyć plik <code>index.html</code> </a> i załączyć do niego Vue:
 
 ``` html
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
 
-The [Installation](installation.html) page provides more options of installing Vue. Note: We **do not** recommend that beginners start with `vue-cli`, especially if you are not yet familiar with Node.js-based build tools.
+[Instalacja](installation.html) opisuje inne sposoby pracy z Vue. Uwaga: **Nie** zalecamy aby początkujący korzystali z `vue-cli`, zwłaszcza jeżeli nie znasz narzędzi bazujących na Node.js.
 
-## Declarative Rendering
+## Renderowanie deklaratywne
 
-At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax:
+W rdzeniu Vue.js jest system renderujący deklaratywnie DOM, używając składni templatek:
 
 ``` html
 <div id="app">
@@ -53,15 +53,14 @@ var app = new Vue({
 </script>
 {% endraw %}
 
-We have already created our very first Vue app! This looks pretty similar to rendering a string template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is now **reactive**. How do we know? Open your browser's JavaScript console (right now, on this page) and set `app.message` to a different value. You should see the rendered example above update accordingly.
+To Twoja pierwsza aplikacja w Vue! Wygląda bardzo prosto, jednak wymagała od Vue sporo pracy, której nie widać. Obiekt 'data' oraz DOM zoststały połączone i wszystko jest już **reaktywne**. Skąd o tym wiemy? Otwórz konsolę (w tym oknie przeglądarki) i ustaw inną wartość w `app.message`. Przykład powinien się zaktualizować.
 
-In addition to text interpolation, we can also bind element attributes like this:
+Oprócz tekstu, możesz również bindować atrybuty:
 
 ``` html
 <div id="app-2">
   <span v-bind:title="message">
-    Hover your mouse over me for a few seconds
-    to see my dynamically bound title!
+    Najedź na mnie myszką i zaczekaj kilka sekund, aby zobaczyć dynamicznie bindowany title!
   </span>
 </div>
 ```
@@ -69,37 +68,37 @@ In addition to text interpolation, we can also bind element attributes like this
 var app2 = new Vue({
   el: '#app-2',
   data: {
-    message: 'You loaded this page on ' + new Date().toLocaleString()
+    message: 'Strona wczytana ' + new Date().toLocaleString()
   }
 })
 ```
 {% raw %}
 <div id="app-2" class="demo">
   <span v-bind:title="message">
-    Hover your mouse over me for a few seconds to see my dynamically bound title!
+    Najedź na mnie myszką i zaczekaj kilka sekund, aby zobaczyć dynamicznie bindowany title!
   </span>
 </div>
 <script>
 var app2 = new Vue({
   el: '#app-2',
   data: {
-    message: 'You loaded this page on ' + new Date().toLocaleString()
+    message: 'Strona wczytana ' + new Date().toLocaleString()
   }
 })
 </script>
 {% endraw %}
 
-Here we are encountering something new. The `v-bind` attribute you are seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, it is basically saying "keep this element's `title` attribute up-to-date with the `message` property on the Vue instance."
+Tutaj pojawia się coś nowego. Atrybut `v-bind` widoczny tutaj, nazywany jest **dyrektywą**. Dyrektywy są poprzedzane `v-` aby zaznaczyć, że są to specjalne atrybuty dla Vue i jak się zapewne domyślasz umożliwiają reaktywne zachowanie w renderowanym DOM. W tym wypadku mówi: "utrzymuj wartość atrybutu `title` tego elementu, taką jak właściwość `message` w instancji Vue".
 
-If you open up your JavaScript console again and enter `app2.message = 'some new message'`, you'll once again see that the bound HTML - in this case the `title` attribute - has been updated.
+Jeżeli ponownie otworzysz konsolę przeglądarki i wpiszesz: `app2.message = 'jakaś nowa wiadomość'` raz jeszcze zaktualizujesz DOM, tym razem atrybut `title`.
 
-## Conditionals and Loops
+## Warunki i pętle
 
-It's easy to toggle the presence of an element, too:
+Przełączanie widoczności elementu jest również bardzo łatwe:
 
 ``` html
 <div id="app-3">
-  <span v-if="seen">Now you see me</span>
+  <span v-if="seen">Widać mnie</span>
 </div>
 ```
 
@@ -114,7 +113,7 @@ var app3 = new Vue({
 
 {% raw %}
 <div id="app-3" class="demo">
-  <span v-if="seen">Now you see me</span>
+  <span v-if="seen">Widać mnie</span>
 </div>
 <script>
 var app3 = new Vue({
@@ -126,7 +125,7 @@ var app3 = new Vue({
 </script>
 {% endraw %}
 
-Go ahead and enter `app3.seen = false` in the console. You should see the message disappear.
+Teraz wpisz w konsoli `app3.seen = false`, zobaczysz jak wiadomość znika.
 
 This example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](transitions.html) when elements are inserted/updated/removed by Vue.
 
