@@ -24,7 +24,7 @@ Podczas pracy z Vue, zalecamy zainstalowanie w przeglądarce [Vue Devtools](http
 
 Poprostu pobierz i załącz w tagu script. 'Vue' zostanie zarejestrowane jako zmienna globalna.
 
-<p class="tip">W trakcie prac na aplikacją nie używaj wesji produkcyjnej, ponieważ nie zawiera obsługi napopularniejszych błędów przez ostrzeżenia!</p>
+<p class="tip">W trakcie prac nad aplikacją nie używaj wersji produkcyjnej, ponieważ nie zawiera obsługi najpopularniejszych błędów przez ostrzeżenia!</p>
 
 <div id="downloads">
 <a class="button" href="/js/vue.js" download>Wersja developerska</a><span class="light info">zawiera wszystkie ostrzeżenia i tryb debug</span>
@@ -36,11 +36,11 @@ Poprostu pobierz i załącz w tagu script. 'Vue' zostanie zarejestrowane jako zm
 
 Zalecamy załączanie z linku: [https://cdn.jsdelivr.net/npm/vue](https://cdn.jsdelivr.net/npm/vue), link zawiera najnowszą wersję, zaraz po publikacji na npm. Możesz również zajrzeć do źródła paczki npm na: [https://cdn.jsdelivr.net/npm/vue/](https://cdn.jsdelivr.net/npm/vue/).
 
-Dostępne również [unpkg](https://unpkg.com/vue) oraz [cdnjs](https://cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.js) (cdnjs potrzebuje czasu na synchronizację, dlatego najnowsze wersja może nie być tu dostępna od razu).
+Dostępne również [unpkg](https://unpkg.com/vue) oraz [cdnjs](https://cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.js) (cdnjs potrzebuje czasu na synchronizację, dlatego najnowsza wersja może nie być tu dostępna od razu).
 
 ## NPM
 
-Podczas budowy dużych aplikacji z Vue zalecamy korzystanie z NPM. Dobrze współpracuje z [Webpack](https://webpack.js.org/) i [Browserify](http://browserify.org/). Vue zapewnia również dodatkowe narzedzia do authoringu [Single File Components](single-file-components.html).
+Podczas budowy dużych aplikacji z Vue zalecamy korzystanie z NPM. Dobrze współpracuje z [Webpack](https://webpack.js.org/) i [Browserify](http://browserify.org/). Vue zapewnia również dodatkowe narzędzia do authoringu [Single File Components](single-file-components.html).
 
 ``` bash
 # Najnowsza stabilna wersja
@@ -49,7 +49,7 @@ $ npm install vue
 
 ## CLI
 
-Vue.js zapewnia [oficjalne CLI](https://github.com/vuejs/vue-cli) do szybkiej budowy szkieletu jednostronnicowej aplikacji. Dzięki temu dostajesz zestaw narzędzi do nowoczesnej pracy z frontendem. It provides batteries-included build setups for a modern frontend workflow. Wystarczy kilka minut aby uruchomić takie funkcje jak hot-reload, lint-on-save czy production-ready:
+Vue.js zapewnia [oficjalne CLI](https://github.com/vuejs/vue-cli) do szybkiej budowy szkieletu jednostronnicowych aplikacji. Dzięki temu dostajesz zestaw narzędzi do nowoczesnej pracy z frontendem. Wystarczy kilka minut aby uruchomić takie funkcje jak hot-reload, lint-on-save czy production-ready:
 
 ``` bash
 # zainstaluj vue-cli
@@ -62,11 +62,11 @@ $ npm install
 $ npm run dev
 ```
 
-<p class="tip">CLI wymaga znajomości Node.js i powiązanych z nim narzędzi. Jeżeli dopiero zaczynasz z Vue lub narzedziami fron-endowymi, zalecamy zapoznanie się z <a href="./">przewodnikiem</a> nie korzystając z narzedzi przed rozpoczeciem korzystania z CLI.</p>
+<p class="tip">CLI wymaga znajomości Node.js i powiązanych z nim narzędzi. Jeżeli dopiero zaczynasz z Vue lub narzedziami front-endowymi, zalecamy zapoznanie się z <a href="./">przewodnikiem</a> nie korzystając z narzędzi przed rozpoczęciem korzystania z CLI.</p>
 
 ## Wyjaśnienie różnych buildów
 
-W katalogu [`dist/` z paczki NPM](https://cdn.jsdelivr.net/npm/vue/dist/) znajdziesz wiele różnych buildów Vue.js. POniżej krótkie zestawienie róźnic pomiędzy nimi:
+W katalogu [`dist/` z paczki NPM](https://cdn.jsdelivr.net/npm/vue/dist/) znajdziesz wiele różnych buildów Vue.js. Poniżej krótkie zestawienie róźnic pomiędzy nimi:
 
 | | UMD | CommonJS | ES Module |
 | --- | --- | --- | --- |
@@ -159,7 +159,7 @@ Tryb deweloperski/produkcyjny jest hard-kodowany w buildach UMD: nie minifikowan
 
 Buildy CommonJS i ES Module są przeznaczone dla bundlerów, dlatego nie załączyliśmy w nich wersji minifikowanej. Możesz ją wykonać samodzielnie dla finalnego pliku.
 
-Buildy CommonJS i ES Module zawierają również surowe kontrolki dla `process.env.NODE_ENV` aby sprawdzić w jakim trybie Vue ma pracować. Aby to zrobić należy w konfiguracji wykorzystywanego bundlera zastąpić te zmienne środowiskowe. Zastępując `process.env.NODE_ENV` literałem pozwalającym na minifikację, np: UglifyJS można całkowicie wyeliminować bloki kodu uzywane podczas developmentu, redukując przy tym rozmiar pliku finalnego.
+Buildy CommonJS i ES Module zawierają również surowe kontrolki dla `process.env.NODE_ENV` aby sprawdzić w jakim trybie Vue ma pracować. Aby to zrobić należy w konfiguracji wykorzystywanego bundlera zastąpić te zmienne środowiskowe. Zastępując `process.env.NODE_ENV` literałem pozwalającym na minifikację, np: UglifyJS można całkowicie wyeliminować bloki kodu używane podczas dewelopmentu, redukując przy tym rozmiar pliku finalnego.
 
 #### Webpack
 
@@ -210,13 +210,13 @@ Zobacz również [Production Deployment Tips](deployment.html).
 
 ### Środowiska CSP
 
-Niektóre środowiska, takie jak Google Chrome Apps, wymuszają Content Security Policy (CSP), która zabranie używania `new Function()`. full build bazuje na tej własności, więc jest bezużyteczny w tym przypadku.
+Niektóre środowiska, takie jak Google Chrome Apps, wymuszają Content Security Policy (CSP), która zabrania używania `new Function()`. full build bazuje na tej własności, więc jest bezużyteczny w tym przypadku.
 
 Natomiast build untime-only jest w pełni kompatybilny z CSP. Korzystając z niego w połączeniu z [Webpack + vue-loader](https://github.com/vuejs-templates/webpack-simple) lub [Browserify + vueify](https://github.com/vuejs-templates/browserify-simple), twoje templatki będą prekompilowane do funkcji typu `render`, które świetnie współpracują ze środowiskami CSP.
 
 ## Dev Build
 
-**Ważne**: pliki znajdujące się na Github w folderze `/dist` są przygotowywane w chwilu wypuszczania kolejnej wersji. Aby korzystać z najnowszej wersji Vue musisz przygotować build samemu!
+**Ważne**: pliki znajdujące się na Github w folderze `/dist` są przygotowywane w chwili wypuszczania kolejnej wersji. Aby korzystać z najnowszej wersji Vue musisz przygotować build samemu!
 
 ``` bash
 git clone https://github.com/vuejs/vue.git node_modules/vue

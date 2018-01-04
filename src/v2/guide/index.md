@@ -6,7 +6,7 @@ order: 2
 
 ## Czym jest Vue.js?
 
-Vue (wymowa /vjuː/, jak **view**) to **progresywny framework** do budowania interfejsu użytkownika. W  is a **progressive framework** for building user interfaces. W przeciwieństwie do monolitycznych frameworków, Vue został zbudowany z myślą o stopnowym implementowaniu. Rdzeń biblioteki koncentruje się tylko na warstwie widoku, łatwo jest z niego skorzystać i zintegrować z innymi bibliotekami w projekcie. Vue w połączeniu z [nowoczesnymi narzędziami](single-file-components.html) i [dodatkowymi bibliotekami](https://github.com/vuejs/awesome-vue#components--libraries).  idealnie sprawdza się jako silnik zaawansowanych jednostronnicowych aplikacji webowych.
+Vue (wymowa /vjuː/, jak **view**) to **progresywny framework** do budowania interfejsu użytkownika. W przeciwieństwie do monolitycznych frameworków, Vue został zbudowany z myślą o stopnowym implementowaniu. Rdzeń biblioteki koncentruje się tylko na warstwie widoku, łatwo jest z niego skorzystać i zintegrować z innymi bibliotekami w projekcie. Vue w połączeniu z [nowoczesnymi narzędziami](single-file-components.html) i [dodatkowymi bibliotekami](https://github.com/vuejs/awesome-vue#components--libraries).  idealnie sprawdza się jako silnik zaawansowanych jednostronnicowych aplikacji webowych.
 
 Jeżeli jesteś doświadczonym fornt-end developerem i chcesz zobaczyć jak Vue wypada w porównaniu z innymi frameworkami/bibliotekami, przeczytaj [Porówanie Vue z innymi frameworkami](comparison.html).
 
