@@ -1,24 +1,24 @@
 ---
-title: Class and Style Bindings
+title: Bindowanie Klas i Styli
 type: guide
 order: 6
 ---
 
-A common need for data binding is manipulating an element's class list and its inline styles. Since they are both attributes, we can use `v-bind` to handle them: we only need to calculate a final string with our expressions. However, meddling with string concatenation is annoying and error-prone. For this reason, Vue provides special enhancements when `v-bind` is used with `class` and `style`. In addition to strings, the expressions can also evaluate to objects or arrays.
+Powszechnym zastosowaniem bindowania wartości jest manipulacja listy klas elementu i jego styli lokalnych (osadzonych w tagu HTML). Obydwie te rzeczy są atrybutami, więc możemy użyć `v-bind` by nimi zarządzać. Do tego, musimy utworzyć stringa będącego wartością tych atrybutów. Niestety, konkatenacja stringów bywa uciążliwa i łatwo jest przy niej popełnić błąd. Z tego powodu Vue oferuje ulepszenie związane z używaniem `v-bind` wraz z atrybutami `class` i `style`. Oprócz stringów, wartością mogą być także obiekty i tablice.
 
-## Binding HTML Classes
+## Bindowanie klas w HTML
 
-### Object Syntax
+### Składnia z użyciem obiektu
 
-We can pass an object to `v-bind:class` to dynamically toggle classes:
+Do `v-bind:class` możemy przekazać obiekt żeby dynamicznie przełączać klasy:
 
 ``` html
 <div v-bind:class="{ active: isActive }"></div>
 ```
 
-The above syntax means the presence of the `active` class will be determined by the [truthiness](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) of the data property `isActive`.
+Powyższa składnia determinuje obecność klasy `active` poprzez [prawdziwość](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) własności `isActive`.
 
-You can have multiple classes toggled by having more fields in the object. In addition, the `v-bind:class` directive can also co-exist with the plain `class` attribute. So given the following template:
+Możesz zarządzać większą ilością klas poprzez dodanie wielu atrybutów w obiekcie. Dodatkowo `v-bind:class` może współistnieć ze standardowym atrybutem `class`, tak jak w przykładzie poniżej.
 
 ``` html
 <div class="static"
@@ -26,7 +26,7 @@ You can have multiple classes toggled by having more fields in the object. In ad
 </div>
 ```
 
-And the following data:
+Z następującymi danymi:
 
 ``` js
 data: {
@@ -35,15 +35,15 @@ data: {
 }
 ```
 
-It will render:
+Wyrenderuje:
 
 ``` html
 <div class="static active"></div>
 ```
 
-When `isActive` or `hasError` changes, the class list will be updated accordingly. For example, if `hasError` becomes `true`, the class list will become `"static active text-danger"`.
+Podczas zmiany `isActive`, lub `hasError` lista klas będzie odpowienio aktualizowana. Jeżeli na przykład właściwość atrybutu `hasError` zostanie zmieniona na `true` lista klas zmieni się na `"static active text-danger"`.
 
-The bound object doesn't have to be inline:
+Zbindowany obiekt nie musi być wstawiany lokalnie:
 
 ``` html
 <div v-bind:class="classObject"></div>
@@ -57,7 +57,7 @@ data: {
 }
 ```
 
-This will render the same result. We can also bind to a [computed property](computed.html) that returns an object. This is a common and powerful pattern:
+Kod przedstawiony niżej spowoduje renderowanie z takim samym rezultatem. Możemy bindować także [computed property](computed.html), który zwraca obiekt. Jest to powszechny i dobry wzorzec.
 
 ``` html
 <div v-bind:class="classObject"></div>
@@ -77,9 +77,9 @@ computed: {
 }
 ```
 
-### Array Syntax
+### Składnia z użyciem tablicy
 
-We can pass an array to `v-bind:class` to apply a list of classes:
+Abo odnieść się do listy klas, do `v-bind:class` możemy przekazać tablicę.
 
 ``` html
 <div v-bind:class="[activeClass, errorClass]"></div>
@@ -91,21 +91,21 @@ data: {
 }
 ```
 
-Which will render:
+Spowoduje to wyrenderowanie:
 
 ``` html
 <div class="active text-danger"></div>
 ```
 
-If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:
+Jeżeli chcesz przełączać klasy w zależności od jakiegoś warunku możesz to zrobić korzystając z potrójnego wyrażenia warunkowego.
 
 ``` html
 <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
 ```
 
-This will always apply `errorClass`, but will only apply `activeClass` when `isActive` is truthy.
+Dzięku temu zapisowi klasa `errorClass` będzie aktywna zawsze, za to klasa `activeClass` będzie aktywna tylko gdy wartość `isActive` będzie prawdziwa.
 
-However, this can be a bit verbose if you have multiple conditional classes. That's why it's also possible to use the object syntax inside array syntax:
+Jednakże powstałe w ten sposób wyrażenia mogą być rozwlekłe. Właśnie dlatego możemy użyć składni z użyciem obiektu wewnątrz składni tablicowej.
 
 ``` html
 <div v-bind:class="[{ active: isActive }, errorClass]"></div>
@@ -113,11 +113,11 @@ However, this can be a bit verbose if you have multiple conditional classes. Tha
 
 ### With Components
 
-> This section assumes knowledge of [Vue Components](components.html). Feel free to skip it and come back later.
+> Ta sekcja zakłada, że zapoznałeś się już z [Vue Components](components.html). Jeżeli nie, omiń ją i wróć tutaj póżniej.
 
-When you use the `class` attribute on a custom component, those classes will be added to the component's root element. Existing classes on this element will not be overwritten.
+Kiedy używasz atrybutu `class` na utworzonym przez ciebie komponencie, klasy zostaną do niego dodane. Nie nadpiszą one klas wewnątrz tego komponentu.
 
-For example, if you declare this component:
+Na przykład jeżeli zadeklarujesz taki komponent:
 
 ``` js
 Vue.component('my-component', {
@@ -125,33 +125,33 @@ Vue.component('my-component', {
 })
 ```
 
-Then add some classes when using it:
+Następnie dodasz do niego klasy w ten sposób:
 
 ``` html
 <my-component class="baz boo"></my-component>
 ```
 
-The rendered HTML will be:
+Wyrenderowany HTML będzie wyglądał następująco:
 
 ``` html
 <p class="foo bar baz boo">Hi</p>
 ```
 
-The same is true for class bindings:
+To samo odnośi się do bindowania klas:
 
 ``` html
 <my-component v-bind:class="{ active: isActive }"></my-component>
 ```
 
-When `isActive` is truthy, the rendered HTML will be:
+Kiedy `isActive` będzie prawdziwe, otrzymmy taki HTML:
 
 ``` html
 <p class="foo bar active">Hi</p>
 ```
 
-## Binding Inline Styles
+## Bindowanie stylów lokalnych
 
-### Object Syntax
+### Składnia z użyciem obiektu
 
 The object syntax for `v-bind:style` is pretty straightforward - it looks almost like CSS, except it's a JavaScript object. You can use either camelCase or kebab-case (use quotes with kebab-case) for the CSS property names:
 
