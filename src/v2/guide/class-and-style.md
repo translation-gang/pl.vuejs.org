@@ -18,7 +18,7 @@ Do `v-bind:class` możemy przekazać obiekt żeby dynamicznie przełączać klas
 
 Powyższa składnia determinuje obecność klasy `active` poprzez [prawdziwość](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) własności `isActive`.
 
-Możesz zarządzać większą ilością klas poprzez dodanie wielu atrybutów w obiekcie. Dodatkowo `v-bind:class` może współistnieć ze standardowym atrybutem `class`, tak jak w przykładzie poniżej.
+Możesz zarządzać większą ilością klas poprzez dodanie wielu własności w obiekcie. Dodatkowo `v-bind:class` może współistnieć ze standardowym atrybutem `class`, tak jak w przykładzie poniżej.
 
 ``` html
 <div class="static"
@@ -41,7 +41,7 @@ Wyrenderuje:
 <div class="static active"></div>
 ```
 
-Podczas zmiany `isActive`, lub `hasError` lista klas będzie odpowienio aktualizowana. Jeżeli na przykład właściwość atrybutu `hasError` zostanie zmieniona na `true` lista klas zmieni się na `"static active text-danger"`.
+Podczas zmiany `isActive`, lub `hasError` lista klas będzie odpowienio aktualizowana. Jeżeli na przykład wartość własności `hasError` zostanie zmieniona na `true` lista klas zmieni się na `"static active text-danger"`.
 
 Zbindowany obiekt nie musi być wstawiany lokalnie:
 
@@ -111,7 +111,7 @@ Jednakże powstałe w ten sposób wyrażenia mogą być rozwlekłe. Właśnie dl
 <div v-bind:class="[{ active: isActive }, errorClass]"></div>
 ```
 
-### With Components
+### W komponencie
 
 > Ta sekcja zakłada, że zapoznałeś się już z [Vue Components](components.html). Jeżeli nie, omiń ją i wróć tutaj póżniej.
 
@@ -143,7 +143,7 @@ To samo odnośi się do bindowania klas:
 <my-component v-bind:class="{ active: isActive }"></my-component>
 ```
 
-Kiedy `isActive` będzie prawdziwe, otrzymmy taki HTML:
+Kiedy `isActive` będzie prawdziwe, otrzymamy taki HTML:
 
 ``` html
 <p class="foo bar active">Hi</p>
@@ -153,7 +153,7 @@ Kiedy `isActive` będzie prawdziwe, otrzymmy taki HTML:
 
 ### Składnia z użyciem obiektu
 
-The object syntax for `v-bind:style` is pretty straightforward - it looks almost like CSS, except it's a JavaScript object. You can use either camelCase or kebab-case (use quotes with kebab-case) for the CSS property names:
+Składnia z użyciem obiektu w `v-bind:style` jest dość prosta, wygląda podobnie jak przy użyciu zwykłego CSSa, z tym, że musimy użyć obiektu. Do określania własności CSS możesz użyć camelCase, lub kebab-case (przy używaniu kebab-case musisz używać cudzysowów):
 
 ``` html
 <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
@@ -165,7 +165,7 @@ data: {
 }
 ```
 
-It is often a good idea to bind to a style object directly so that the template is cleaner:
+Dobrą praktyką jest bindowanie atrybutu `style` tylko z użyciem obiektu, by kod był bardziej przejrzysty.
 
 ``` html
 <div v-bind:style="styleObject"></div>
@@ -179,28 +179,29 @@ data: {
 }
 ```
 
-Again, the object syntax is often used in conjunction with computed properties that return objects.
+Składnia obiektowa jest często używana w połączeniu z computed properties, które zwracają obiekt.
 
-### Array Syntax
+### Składnia z użyciem tablicy
 
-The array syntax for `v-bind:style` allows you to apply multiple style objects to the same element:
+Składnia z użyciem tablicy w `v-bind:style` pozwala ci na dodanie wielu obiektów z właściwościami CSS do tego samego elementu:
 
 ``` html
 <div v-bind:style="[baseStyles, overridingStyles]"></div>
 ```
 
-### Auto-prefixing
+### Automatyczne dodawanie prefixów
 
-When you use a CSS property that requires [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) in `v-bind:style`, for example `transform`, Vue will automatically detect and add appropriate prefixes to the applied styles.
+Kiedy w `v-bind:style` używamy własności CSS która wymaga [prefixów](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix), na przykład `transform`, Vue automatycznie to wykryje i doda za nas wymagane prefixy.
+
 
 ### Multiple Values
 
 > 2.3.0+
 
-Starting in 2.3.0+ you can provide an array of multiple (prefixed) values to a style property, for example:
+Od wersji 2.3.0 w zwyż możemy używać wielu wartości (prefixów) dla danej właściwości w obiekcie, na przykład:
 
 ``` html
 <div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
 
-This will only render the last value in the array which the browser supports. In this example, it will render `display: flex` for browsers that support the unprefixed version of flexbox.
+Powyższe wyrenderuje tylko jedną wartość, tą która jest wymgana przez przeglądarkę. Dla przykładu `disply: flex` zostanie wyrenderowane tylko w przeglądarkach, które nie wymagają żadnych prefixów.
