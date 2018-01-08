@@ -1,12 +1,12 @@
 ---
-title: Wiązanie Klas i Styli
+title: Bindowanie Klas i Styli
 type: guide
 order: 6
 ---
 
-Powszechnym zastosowaniem wiązania wartości jest manipulacja listy klas elementu i jego styli lokalnych (osadzonych w tagu HTML). Obydwie te rzeczy są atrybutami, więc możemy użyć `v-bind` by nimi zarządzać. Do tego, musimy utworzyć stringa będącego wartością tych atrybutów. Niestety, konkatenacja stringów bywa uciążliwa i łatwo jest przy niej popełnić błąd. Z tego powodu Vue oferuje ulepszenie związane z używaniem `v-bind` wraz z atrybutami `class` i `style`. Oprócz stringów, wartością mogą być także obiekty i tablice.
+Powszechnym zastosowaniem bindowania wartości jest manipulacja listy klas elementu i jego styli lokalnych (osadzonych w tagu HTML). Obydwie te rzeczy są atrybutami, więc możemy użyć `v-bind` by nimi zarządzać. Do tego, musimy utworzyć string będącego wartością tych atrybutów. Niestety, konkatenacja stringów bywa uciążliwa i łatwo jest przy niej popełnić błąd. Z tego powodu Vue oferuje ulepszenie związane z używaniem `v-bind` wraz z atrybutami `class` i `style`. Oprócz stringów, wyrażenia te mogą oddziaływać również na obiekty i tablice.
 
-## Wiązanie klas w HTML
+## Bindowanie klas w HTML
 
 ### Składnia z użyciem obiektu
 
@@ -57,7 +57,7 @@ data: {
 }
 ```
 
-Kod przedstawiony niżej spowoduje renderowanie z takim samym rezultatem. Możemy bindować także [computed property](computed.html), który zwraca obiekt. Jest to powszechny i dobry wzorzec.
+Kod przedstawiony niżej spowoduje renderowanie z takim samym rezultatem. Możemy bindować także [Wartości wyliczone](computed.html), który zwraca obiekt. Jest to powszechny i dobry wzorzec.
 
 ``` html
 <div v-bind:class="classObject"></div>
@@ -113,7 +113,7 @@ Jednakże powstałe w ten sposób wyrażenia mogą być rozwlekłe. Właśnie dl
 
 ### W komponencie
 
-> Ta sekcja zakłada, że zapoznałeś się już z [Vue Components](components.html). Jeżeli nie, omiń ją i wróć tutaj póżniej.
+> Ta sekcja zakłada, że zapoznałeś się już z [Komponentami Vue](components.html). Jeżeli nie, zrób to i wróć tutaj póżniej.
 
 Kiedy używasz atrybutu `class` na utworzonym przez ciebie komponencie, klasy zostaną do niego dodane. Nie nadpiszą one klas wewnątrz tego komponentu.
 
@@ -137,7 +137,7 @@ Wyrenderowany HTML będzie wyglądał następująco:
 <p class="foo bar baz boo">Hi</p>
 ```
 
-To samo odnośi się do wiązania klas:
+To samo odnośi się do bindowania klas:
 
 ``` html
 <my-component v-bind:class="{ active: isActive }"></my-component>
@@ -179,7 +179,7 @@ data: {
 }
 ```
 
-Składnia obiektowa jest często używana w połączeniu z computed properties, które zwracają obiekt.
+Składnia obiektowa jest często używana w połączeniu z wartościami wyliczonymi, które zwracają obiekt.
 
 ### Składnia z użyciem tablicy
 
@@ -204,4 +204,4 @@ Od wersji 2.3.0 w zwyż możemy używać wielu wartości (prefixów) dla danej w
 <div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
 
-Powyższe wyrenderuje tylko jedną wartość, tą która jest wymgana przez przeglądarkę. Dla przykładu `disply: flex` zostanie wyrenderowane tylko w przeglądarkach, które nie wymagają żadnych prefixów.
+Powyższe wyrenderuje tylko jedną wartość, tą która jest wymgana przez przeglądarkę. Dla przykładu `disply: flex` zostanie wyrenderowane tylko w przeglądarkach, które nie wymagają żadnych prefixów do użycia `disply: flex`.
