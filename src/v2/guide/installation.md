@@ -1,5 +1,5 @@
 ---
-title: Installation
+title: Instalacja
 type: guide
 order: 1
 vue_version: 2.5.13

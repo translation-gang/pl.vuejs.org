@@ -1,12 +1,12 @@
 ---
-title: Bindowanie Klas i Styli
+title: Wiązanie Klas i Styli
 type: guide
 order: 6
 ---
 
-Powszechnym zastosowaniem bindowania wartości jest manipulacja listy klas elementu i jego styli lokalnych (osadzonych w tagu HTML). Obydwie te rzeczy są atrybutami, więc możemy użyć `v-bind` by nimi zarządzać. Do tego, musimy utworzyć stringa będącego wartością tych atrybutów. Niestety, konkatenacja stringów bywa uciążliwa i łatwo jest przy niej popełnić błąd. Z tego powodu Vue oferuje ulepszenie związane z używaniem `v-bind` wraz z atrybutami `class` i `style`. Oprócz stringów, wartością mogą być także obiekty i tablice.
+Powszechnym zastosowaniem wiązania wartości jest manipulacja listy klas elementu i jego styli lokalnych (osadzonych w tagu HTML). Obydwie te rzeczy są atrybutami, więc możemy użyć `v-bind` by nimi zarządzać. Do tego, musimy utworzyć stringa będącego wartością tych atrybutów. Niestety, konkatenacja stringów bywa uciążliwa i łatwo jest przy niej popełnić błąd. Z tego powodu Vue oferuje ulepszenie związane z używaniem `v-bind` wraz z atrybutami `class` i `style`. Oprócz stringów, wartością mogą być także obiekty i tablice.
 
-## Bindowanie klas w HTML
+## Wiązanie klas w HTML
 
 ### Składnia z użyciem obiektu
 
@@ -43,7 +43,7 @@ Wyrenderuje:
 
 Podczas zmiany `isActive`, lub `hasError` lista klas będzie odpowienio aktualizowana. Jeżeli na przykład wartość własności `hasError` zostanie zmieniona na `true` lista klas zmieni się na `"static active text-danger"`.
 
-Zbindowany obiekt nie musi być wstawiany lokalnie:
+Powiązany obiekt nie musi być wstawiany lokalnie:
 
 ``` html
 <div v-bind:class="classObject"></div>
@@ -79,7 +79,7 @@ computed: {
 
 ### Składnia z użyciem tablicy
 
-Abo odnieść się do listy klas, do `v-bind:class` możemy przekazać tablicę.
+Aby odnieść się do listy klas, do `v-bind:class` możemy przekazać tablicę.
 
 ``` html
 <div v-bind:class="[activeClass, errorClass]"></div>
@@ -137,7 +137,7 @@ Wyrenderowany HTML będzie wyglądał następująco:
 <p class="foo bar baz boo">Hi</p>
 ```
 
-To samo odnośi się do bindowania klas:
+To samo odnośi się do wiązania klas:
 
 ``` html
 <my-component v-bind:class="{ active: isActive }"></my-component>
@@ -149,7 +149,7 @@ Kiedy `isActive` będzie prawdziwe, otrzymamy taki HTML:
 <p class="foo bar active">Hi</p>
 ```
 
-## Bindowanie stylów lokalnych
+## Wiązanie stylów lokalnych
 
 ### Składnia z użyciem obiektu
 
@@ -165,7 +165,7 @@ data: {
 }
 ```
 
-Dobrą praktyką jest bindowanie atrybutu `style` tylko z użyciem obiektu, by kod był bardziej przejrzysty.
+Dobrą praktyką jest wiązanie atrybutu `style` tylko z użyciem obiektu, by kod był bardziej przejrzysty.
 
 ``` html
 <div v-bind:style="styleObject"></div>
@@ -194,7 +194,7 @@ Składnia z użyciem tablicy w `v-bind:style` pozwala ci na dodanie wielu obiekt
 Kiedy w `v-bind:style` używamy własności CSS która wymaga [prefixów](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix), na przykład `transform`, Vue automatycznie to wykryje i doda za nas wymagane prefixy.
 
 
-### Multiple Values
+### Wiele wartości
 
 > 2.3.0+
 
