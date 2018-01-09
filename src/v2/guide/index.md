@@ -14,7 +14,7 @@ Jeżeli jesteś doświadczonym fornt-end developerem i chcesz zobaczyć jak Vue 
 
 <p class="tip">Oficjalny przewodnik wymaga znajmości HTML, CSS i JavaScript. Rozpoczynanie nauki od Vue nie jest najlepszym rozwiązaniem, lepiej najpierw poznać podstawy i wrócić! Doświadczenie z innymi frameworkami jest pomocne, ale nie wymagane.</p>
 
-Najłatwiejszym sposobem wypróbowania Vue.js jest skorzystanie z [JSFiddle Hello World example](https://jsfiddle.net/chrisvfritz/50wL7mdz/). Otwórz link w nowej karcie i pracuj z przykładami z tego przewodnika. Możesz również pobrać <a href="https://gist.githubusercontent.com/chrisvfritz/7f8d7d63000b48493c336e48b3db3e52/raw/ed60c4e5d5c6fec48b0921edaed0cb60be30e87c/index.html" target="_blank" download="index.html">, następnie utworzyć plik <code>index.html</code> </a> i załączyć do niego Vue:
+Najłatwiejszym sposobem wypróbowania Vue.js jest skorzystanie z [JSFiddle Hello World przykład](https://jsfiddle.net/chrisvfritz/50wL7mdz/). Otwórz link w nowej karcie i pracuj z przykładami z tego przewodnika. Możesz również pobrać <a href="https://gist.githubusercontent.com/chrisvfritz/7f8d7d63000b48493c336e48b3db3e52/raw/ed60c4e5d5c6fec48b0921edaed0cb60be30e87c/index.html" target="_blank" download="index.html">, następnie utworzyć plik <code>index.html</code> </a> i załączyć do niego Vue:
 
 ``` html
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
