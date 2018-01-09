@@ -6,7 +6,7 @@ order: 3
 
 ## Tworzenie instancji Vue
 
-Budowa każdej aplikacji Vue, zaczyna się od utworzneia **instacji Vue** za pomocą funkcji `Vue`:
+Budowa każdej aplikacji Vue, zaczyna się od utworzneia **instacji Vue** - za pomocą funkcji `Vue`:
 
 ```js
 var vm = new Vue({
