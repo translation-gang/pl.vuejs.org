@@ -236,4 +236,4 @@ $ bower install vue
 
 ## AMD Module Loaders
 
-Wszystkie buildy UMD mogą być użyte bezpośrednio jako moduły AMD.
+Wszystkie buildy UMD mogą być użyte bezpośrednio jako moduły AMD. 
