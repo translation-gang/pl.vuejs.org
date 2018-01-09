@@ -1,5 +1,5 @@
 ---
-title: Template Syntax
+title: Składnia szablonów
 type: guide
 order: 4
 ---
@@ -66,7 +66,7 @@ Mustaches cannot be used inside HTML attributes. Instead, use a [v-bind directiv
 <div v-bind:id="dynamicId"></div>
 ```
 
-In the case of boolean attributes, where their mere existence implies `true`, `v-bind` works a little differently. In this example: 
+In the case of boolean attributes, where their mere existence implies `true`, `v-bind` works a little differently. In this example:
 
 ``` html
 <button v-bind:disabled="isButtonDisabled">Button</button>
