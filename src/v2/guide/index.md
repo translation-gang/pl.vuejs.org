@@ -348,7 +348,7 @@ var app7 = new Vue({
 
 Poniższy przykład pokazuje jak mozna żadządzać aplikacją przez dzielenie jej na mniejsze elementy, gdzie każdy z potomych jest oddzielony od rodzica interfejscem właściwości. Możemy teraz rozbudować nasz komponent `<todo-item>` o bardziej rozbudowaną teplatkę, oddziaływująca na nadrzędną aplikację.
 
-Zarządzanie dużymi aplikacjacjami wymusza dzielenie kodu na komponenty. W dalszej części przewodnika będzie więcej o [komponentach](components.html), a poniżej jeszcze jeden przykład jak może wyglądać templatka z komponentami:
+Zarządzanie dużymi aplikacjacjami wymusza dzielenie kodu na komponenty. W dalszej części przewodnika będzie więcej o [komponentach](components.html), a poniżej jeszcze jeden przykład jak może wyglądać szablon z komponentami:
 
 ``` html
 <div id="app">

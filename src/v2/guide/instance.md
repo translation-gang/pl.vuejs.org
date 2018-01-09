@@ -125,7 +125,7 @@ Pełną listę właściwości i metdod znajdziesz w [Dokumentacji API](../api/#I
 
 ## Uchwyty cykli życia Instancji
 
-Każda instancja Vue realizuje serię kroków inicjalizujących podczas jej tworzenia, np: ustawnenia powiązania danych, kompiluje templatki, iniccjalizuje instancję w DOM i aktualizuje DOM w przypadku zmiany danych. Po drodze uruchamia funkcje tzw. **uchwyty cyklu życia** dając możliwość użytkownikowi definicji własnych stanów.
+Każda instancja Vue realizuje serię kroków inicjalizujących podczas jej tworzenia, np: ustawnenia powiązania danych, kompiluje szablony, iniccjalizuje instancję w DOM i aktualizuje DOM w przypadku zmiany danych. Po drodze uruchamia funkcje tzw. **uchwyty cyklu życia** dając możliwość użytkownikowi definicji własnych stanów.
 
 Przykładowo uchwyt [`created`](../api/#created) może być wykorzystany do uruchomienia kodu po utworzeniu instancji:
 

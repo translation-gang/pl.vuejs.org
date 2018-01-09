@@ -92,7 +92,7 @@ W katalogu [`dist/` z paczki NPM](https://cdn.jsdelivr.net/npm/vue/dist/) znajdz
 
 ### Runtime + Compiler vs. Runtime-only
 
-Jeżeli potrzebujesz renderować templatki po stronie klienta (np. przekazać string do `template`, lub utworzyć element wykorzystując in-DOM HTML jako template), będziesz potrzebował kompilatora, a więc pełnego builda:
+Jeżeli potrzebujesz renderować szablony po stronie klienta (np. przekazać string do `template`, lub utworzyć element wykorzystując in-DOM HTML jako template), będziesz potrzebował kompilatora, a więc pełnego builda:
 
 ``` js
 // ten kod potrzebuje kompilatora
@@ -108,7 +108,7 @@ new Vue({
 })
 ```
 
-Jeżeli używasz `vue-loader` lub `vueify`, templatki wewnątrz plików `*.vue` są prekompilowane do JavaScript w locie, nie porzebujesz kompilatora w finalnej wersji pliku wystarczy runtime-only build.
+Jeżeli używasz `vue-loader` lub `vueify`, szablony wewnątrz plików `*.vue` są prekompilowane do JavaScript w locie, nie porzebujesz kompilatora w finalnej wersji pliku wystarczy runtime-only build.
 
 Ponieważ pliki runtime-only są około 30% lżejsze od swoich wersji full-build, powinno się ich używać gdzie tylko to możliwe. Jednak w razie potrzeby zawsze można wykonać full-build konfigurując alias w bundlerze:
 
