@@ -204,4 +204,4 @@ Od wersji 2.3.0 w zwyż możemy używać wielu wartości (prefixów) dla danej w
 <div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
 
-Powyższe wyrenderuje tylko jedną wartość, tą która jest wymgana przez przeglądarkę. Dla przykładu `disply: flex` zostanie wyrenderowane tylko w przeglądarkach, które nie wymagają żadnych prefixów do użycia `disply: flex`.
+Powyższe wyrenderuje tylko jedną wartość, tą która jest wymagana przez przeglądarkę. Dla przykładu `disply: flex` zostanie wyrenderowane tylko w przeglądarkach, które nie wymagają żadnych prefixów do użycia `disply: flex`.
