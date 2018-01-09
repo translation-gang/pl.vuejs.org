@@ -12,7 +12,7 @@ If you are familiar with Virtual DOM concepts and prefer the raw power of JavaSc
 
 ## Interpolations
 
-### Text
+### Tekst
 
 The most basic form of data binding is text interpolation using the "Mustache" syntax (double curly braces):
 
