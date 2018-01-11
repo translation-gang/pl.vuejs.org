@@ -1,5 +1,5 @@
 ---
-title: List Rendering
+title: Renderowanie List
 type: guide
 order: 8
 ---
